@@ -16,17 +16,17 @@
         <div class="row">
           <div class="col">
             
-            <form action="" method="post">
+            <form action="/registrar" method="post">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nome">
+                <input type="text" name="nome" class="form-control" placeholder="Nome" required>
               </div>
               
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="E-mail">
+                <input type="text" name="email" class="form-control" placeholder="E-mail" required>
               </div>
 
               <div class="form-group">
-                <input type="password" class="form-control" placeholder="Senha">
+                <input type="password" name="senha" class="form-control" placeholder="Senha" required>
               </div>
               
               <div class="mt-4 mb-4">
@@ -35,6 +35,18 @@
                 </small>
               </div>
               <button type="submit" class="btn btn-primary btn-block">Inscrever-se</button>
+
+              <?php if($this->view->erroCadastro ) {?>
+
+                <div class="alert alert-danger mt-3" role="alert">
+                  <small class="form-text text-danger">
+                    * Erro ao tentar realizar o cadastro, 
+                    por favor verifique se os campos foram preenchidos corretamente.
+                  </small>
+                </div>
+
+              <?php } ?>
+              
             </form>
 
           </div>

@@ -8,9 +8,9 @@ class Connection {
 		try {
 
 			$conn = new \PDO(
-				"mysql:host=localhost;dbname=mvc;charset=utf8",
+				"mysql:host=localhost;dbname=NOME_BANCO;charset=utf8",
 				"root",
-				"" 
+				"SENHA_BANCO" 
 			);
 
 			return $conn;
